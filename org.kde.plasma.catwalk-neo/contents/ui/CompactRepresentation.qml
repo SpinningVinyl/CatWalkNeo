@@ -85,7 +85,8 @@ Item {
             animated: false
             roundToIconSize: false
             isMask: true
-            color: Kirigami.Theme.textColor
+            color: plasmoid.configuration.highCpuColorEnabled && totalSensor.value > plasmoid.configuration.highCpuThreshold
+                ? plasmoid.configuration.highCpuColor : Kirigami.Theme.textColor
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
             Layout.preferredWidth: Math.min(compactRepresentation.parent.width,
                                             compactRepresentation.parent.height, 128)

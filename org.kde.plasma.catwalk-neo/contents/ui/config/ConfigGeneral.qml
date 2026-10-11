@@ -3,11 +3,15 @@ import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
+import org.kde.kquickcontrols as KQuickControls
 
 KCM.SimpleKCM {
     property alias cfg_idle: idleSlider.value
     property alias cfg_type: typeBox.currentIndex
     property alias cfg_iconPosition: iconPositionBox.currentIndex
+    property alias cfg_highCpuColorEnabled: highCpuColorCheckBox.checked
+    property alias cfg_highCpuThreshold: highCpuThresholdSpinBox.value
+    property alias cfg_highCpuColor: highCpuColorButton.color
     property alias cfg_updateRateLimit: updateRateLimitSpinBox.value
     Kirigami.FormLayout {
         id: root
@@ -47,6 +51,30 @@ KCM.SimpleKCM {
             Kirigami.FormData.label: i18n("Icon position")
             model: [i18n("Left"), i18n("Right")]
             enabled: typeBox.currentIndex === 0
+        }
+        Controls.CheckBox {
+            id: highCpuColorCheckBox
+            text: i18n("Change cat colour at high CPU usage")
+        }
+        RowLayout {
+            Kirigami.FormData.label: i18n("CPU usage threshold")
+            enabled: highCpuColorCheckBox.checked
+            Controls.SpinBox {
+                id: highCpuThresholdSpinBox
+                from: 0
+                to: 100
+                editable: true
+            }
+            Controls.Label {
+                text: "%"
+            }
+        }
+        KQuickControls.ColorButton {
+            id: highCpuColorButton
+            Kirigami.FormData.label: i18n("High CPU colour")
+            dialogTitle: i18n("Choose high CPU colour")
+            showAlphaChannel: false
+            enabled: highCpuColorCheckBox.checked
         }
         Controls.SpinBox {
             id: updateRateLimitSpinBox
