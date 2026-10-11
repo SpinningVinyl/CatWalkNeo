@@ -1,5 +1,4 @@
 import QtQuick
-import org.kde.ksvg as KSvg
 import QtQuick.Layouts
 import org.kde.ksysguard.sensors as Sensors
 import org.kde.kirigami as Kirigami
@@ -78,10 +77,14 @@ Item {
                 return GridLayout.LeftToRight
             }
         }
-        KSvg.SvgItem {
+        Kirigami.Icon {
             property int sourceIndex: 0
             id: svgItem
             opacity: 1
+            animated: false
+            roundToIconSize: false
+            isMask: true
+            color: Kirigami.Theme.textColor
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
             Layout.preferredWidth: Math.min(compactRepresentation.parent.width,
                                             compactRepresentation.parent.height, 128)
@@ -89,7 +92,7 @@ Item {
             Layout.maximumHeight: 128
             Layout.maximumWidth: 128
             visible: plasmoid.configuration.type !== 2
-            imagePath: Qt.resolvedUrl("../images/my-idle-symbolic.svg")
+            source: Qt.resolvedUrl("../images/my-idle-symbolic.svg")
         }
             Layout.maximumHeight: 40
             PlasmaComponents3.Label {
@@ -146,7 +149,7 @@ Item {
                     if (svgItem.sourceIndex == 5) {
                         svgItem.sourceIndex = 0
                     }
-                    svgItem.imagePath = (totalSensor.value < plasmoid.configuration.idle) ? Qt.resolvedUrl("../images/my-idle-symbolic.svg") : Qt.resolvedUrl("../images/my-active-" + svgItem.sourceIndex + "-symbolic.svg")
+                    svgItem.source = (totalSensor.value < plasmoid.configuration.idle) ? Qt.resolvedUrl("../images/my-idle-symbolic.svg") : Qt.resolvedUrl("../images/my-active-" + svgItem.sourceIndex + "-symbolic.svg")
                     svgItem.sourceIndex += 1
                 }
             }
