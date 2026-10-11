@@ -1,7 +1,7 @@
 > [!NOTE]
-> This is a mirror of CatWalk plasmoid from https://store.kde.org/p/2055225/ and https://store.kde.org/p/2137844/ , aims to preserve the history and make it easy for distribution packaging.
+> CatWalk Neo is based on the CatWalk plasmoid from https://store.kde.org/p/2055225/ and https://store.kde.org/p/2137844/ and aims to preserve the history and make it easy for distribution packaging.
 
-# CatWalk
+# CatWalk Neo
 
 A simple plasmoid showing the total CPU usage. Visually made like RunCat.
 
@@ -15,7 +15,7 @@ Special thanks to [Nikita Beloglazov](https://github.com/NikitaBeloglazov) for a
 
 ### Manual installation
 
-Manual installation: unpack `org.kde.plasma.catwalk` to `~/.local/share/plasma/plasmoids`.
+Manual installation: unpack `org.kde.plasma.catwalk-neo` to `~/.local/share/plasma/plasmoids`.
 
 ### Build and install with CMake
 

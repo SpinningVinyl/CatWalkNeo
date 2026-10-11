@@ -19,9 +19,9 @@
             "desktop"
         ],
         "Icon": "animal-symbolic",
-        "Id": "org.kde.plasma.catwalk",
+        "Id": "org.kde.plasma.catwalk-neo",
         "License": "GPL-2.0+",
-        "Name": "CatWalk",
+        "Name": "CatWalk Neo",
         "Website": "",
         "Version": "2.4"
     },
