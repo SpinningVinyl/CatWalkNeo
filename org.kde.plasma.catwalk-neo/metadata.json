@@ -22,11 +22,12 @@
             "handset",
             "desktop"
         ],
+        "Icon": "animal-symbolic",
         "Id": "org.kde.plasma.catwalk-neo",
         "License": "GPL-2.0+",
         "Name": "CatWalk Neo",
         "Website": "https://github.com/SpinningVinyl/CatWalkNeo",
-        "Version": "3.0"
+        "Version": "3.0.1"
     },
     "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-Provides": [
