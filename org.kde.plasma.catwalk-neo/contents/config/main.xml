@@ -11,6 +11,9 @@
         <entry name="type" type="Int">
             <default>0</default>
         </entry>
+        <entry name="iconPosition" type="Int">
+            <default>0</default>
+        </entry>
         <entry name="updateRateLimit" type="Int">
         <default>1000</default>
         </entry>

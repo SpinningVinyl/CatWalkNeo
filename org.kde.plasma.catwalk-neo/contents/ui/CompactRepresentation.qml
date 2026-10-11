@@ -35,6 +35,7 @@ Item {
     }
     GridLayout {
         id: grid
+        layoutDirection: plasmoid.configuration.iconPosition === 1 ? Qt.RightToLeft : Qt.LeftToRight
         width: {
             switch (compactRepresentation.layoutForm) {
             case CompactRepresentation.LayoutType.HorizontalPanel:

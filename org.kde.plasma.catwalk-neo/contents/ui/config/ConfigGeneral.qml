@@ -7,6 +7,7 @@ import org.kde.kcmutils as KCM
 KCM.SimpleKCM {
     property alias cfg_idle: idleSlider.value
     property alias cfg_type: typeBox.currentIndex
+    property alias cfg_iconPosition: iconPositionBox.currentIndex
     property alias cfg_updateRateLimit: updateRateLimitSpinBox.value
     Kirigami.FormLayout {
         id: root
@@ -39,6 +40,13 @@ KCM.SimpleKCM {
             id: typeBox
             model: [i18n("Character and percentage"), i18n(
                     "Character only"), i18n("Percentage only")]
+        }
+        Controls.ComboBox {
+            id: iconPositionBox
+            Layout.fillWidth: true
+            Kirigami.FormData.label: i18n("Icon position")
+            model: [i18n("Left"), i18n("Right")]
+            enabled: typeBox.currentIndex === 0
         }
         Controls.SpinBox {
             id: updateRateLimitSpinBox
